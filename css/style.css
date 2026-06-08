@@ -1253,7 +1253,7 @@ body {
 .letter-actions {
     display: flex;
     gap: 1.5rem;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 /* 7. Responsive Styles */
