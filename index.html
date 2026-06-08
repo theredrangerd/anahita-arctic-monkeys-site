@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favourite Worst Nightmare - Happy Birthday Anahita!</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&family=Syne:wght@700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Intro Gatekeeper Overlay -->
+    <div id="intro-screen" class="intro-overlay">
+        <div class="intro-glass-panel">
+            <div class="intro-album-art">
+                <!-- SVG silhouette of the house outline with pulsing neon windows -->
+                <svg viewBox="0 0 100 100" class="intro-house-svg">
+                    <path d="M 10 90 L 10 40 L 50 10 L 90 40 L 90 90 Z" fill="none" stroke="rgba(255,255,255,0.2)"
+                        stroke-width="2" />
+                    <rect x="25" y="45" width="15" height="15" fill="none" stroke="#ff007f" class="pulsing-window"
+                        style="animation-delay: 0s;" />
+                    <rect x="60" y="45" width="15" height="15" fill="none" stroke="#f2ec30" class="pulsing-window"
+                        style="animation-delay: 0.5s;" />
+                    <rect x="25" y="70" width="15" height="15" fill="none" stroke="#00e5ff" class="pulsing-window"
+                        style="animation-delay: 1s;" />
+                    <rect x="60" y="70" width="15" height="15" fill="none" stroke="#39ff14" class="pulsing-window"
+                        style="animation-delay: 1.5s;" />
+                </svg>
+            </div>
+            <h1 class="intro-title">FAVOURITE WORST<br>NIGHTMARE</h1>
+            <p class="intro-subtitle">A Tribute & Birthday Gift for <span class="highlight-name">Anahita</span></p>
+            <button id="enter-btn" class="neon-btn pink-btn">
+                <span>ENTER THE NIGHTMARE</span>
+                <i data-lucide="play" class="btn-icon"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Site Content (initially hidden or blurred) -->
+    <div id="main-content" class="main-wrapper hidden">
+        <!-- Floating Navigation -->
+        <nav class="nav-bar">
+            <div class="logo">
+                <span class="logo-fw">FW</span><span class="logo-n">N</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active" data-section="home">Home</a>
+                <a href="#tracks" class="nav-link" data-section="tracks">Tracks</a>
+                <a href="#history" class="nav-link" data-section="history">History</a>
+                <a href="#futures" class="nav-link" data-section="futures">Futures</a>
+                <a href="#gift" class="nav-link" data-section="gift">Anahita's Gift</a>
+            </div>
+        </nav>
+
+        <!-- Main Content Sections -->
+        <main class="content-container">
+            <!-- Section 1: Home / Main Dashboard -->
+            <section id="home" class="content-section active">
+                <div class="hero-grid">
+                    <div class="hero-text-block">
+                        <div class="bday-glow-header">
+                            <span class="small-tag">HAPPY BIRTHDAY, ANAHITA!</span>
+                            <h2 class="neon-glow-title text-magenta">R U MINE?</h2>
+                        </div>
+                        <p class="hero-description">
+                            Welcome to your personal Arctic Monkeys website! You could've picked any website and I
+                            would've made it awesome, but I do hope you think this is pretty good. Love you babe, go
+                            play around!
+                        </p>
+                        <div class="action-buttons">
+                            <a href="#gift" class="neon-btn cyan-btn sm">
+                                <span>Open Your Gift</span>
+                                <i data-lucide="gift"></i>
+                            </a>
+                            <a href="#tracks" class="neon-btn-outline yellow-btn sm">
+                                <span>Browse Album Playlist</span>
+                                <i data-lucide="music"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive House Section -->
+                    <div class="interactive-house-container">
+                        <h3 class="interactive-instruction">Click the windows to play the songs!</h3>
+                        <div class="house-graphic">
+                            <div class="house-frame">
+                                <!-- Grid representing the Juno design cover rooms -->
+                                <div class="room pink-room" data-track-index="1" title="Brianstorm">
+                                    <div class="room-label">01</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room yellow-room" data-track-index="2" title="Teddy Picker">
+                                    <div class="room-label">02</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room cyan-room" data-track-index="3" title="D Is for Dangerous">
+                                    <div class="room-label">03</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room green-room" data-track-index="4" title="Balaclava">
+                                    <div class="room-label">04</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room orange-room" data-track-index="5" title="Fluorescent Adolescent">
+                                    <div class="room-label">05</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room magenta-room" data-track-index="6" title="Only Ones Who Know">
+                                    <div class="room-label">06</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room cyan-dark-room" data-track-index="7" title="Do Me a Favour">
+                                    <div class="room-label">07</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room green-neon-room" data-track-index="8" title="This House Is a Circus">
+                                    <div class="room-label">08</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room yellow-dark-room" data-track-index="9"
+                                    title="If You Were There, Beware">
+                                    <div class="room-label">09</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room pink-hot-room" data-track-index="10" title="The Bad Thing">
+                                    <div class="room-label">10</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room orange-neon-room" data-track-index="11" title="Old Yellow Bricks">
+                                    <div class="room-label">11</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                                <div class="room red-neon-room" data-track-index="12" title="505">
+                                    <div class="room-label">12</div>
+                                    <div class="room-glow-bg"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Tracks Playlist and Custom Player -->
+            <section id="tracks" class="content-section">
+                <div class="tracks-layout">
+                    <!-- Music Player Sidebar/Widget -->
+                    <div class="player-panel glass-card">
+                        <div class="now-playing-header">
+                            <span class="pulse-indicator"></span> Now Playing
+                        </div>
+                        <div class="album-art-container">
+                            <img id="player-art"
+                                src="https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/29/f5/6f/29f56fb2-4735-947b-f63a-2801294719cb/am_am_itunes_bonus_v2.jpg/500x500bb.jpg"
+                                alt="Album Cover" class="player-album-art rotate-on-play">
+                            <!-- Beat visualizer bar graph overlaying the album cover -->
+                            <div class="beat-waves">
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                                <div class="wave-bar"></div>
+                            </div>
+                        </div>
+                        <div class="track-info">
+                            <h3 id="player-track-name">R U Mine?</h3>
+                            <p id="player-artist">Arctic Monkeys</p>
+                        </div>
+
+                        <!-- Seek bar and durations -->
+                        <div class="progress-area">
+                            <input type="range" id="progress-bar" min="0" max="100" value="0" class="neon-slider">
+                            <div class="time-display">
+                                <span id="current-time">0:00</span>
+                                <span id="total-duration">0:30</span>
+                            </div>
+                        </div>
+
+                        <!-- Music Controls -->
+                        <div class="controls-area">
+                            <button id="shuffle-btn" class="ctrl-btn" title="Shuffle"><i
+                                    data-lucide="shuffle"></i></button>
+                            <button id="prev-btn" class="ctrl-btn" title="Previous"><i
+                                    data-lucide="skip-back"></i></button>
+                            <button id="play-pause-btn" class="ctrl-btn play-btn" title="Play/Pause"><i
+                                    data-lucide="play"></i></button>
+                            <button id="next-btn" class="ctrl-btn" title="Next"><i
+                                    data-lucide="skip-forward"></i></button>
+                            <button id="loop-btn" class="ctrl-btn" title="Repeat"><i data-lucide="repeat"></i></button>
+                        </div>
+
+                        <!-- Volume control -->
+                        <div class="volume-area">
+                            <i data-lucide="volume-2" id="volume-icon"></i>
+                            <input type="range" id="volume-bar" min="0" max="100" value="80"
+                                class="neon-slider volume-slider">
+                        </div>
+                    </div>
+
+                    <!-- Song Playlist Directory -->
+                    <div class="playlist-panel glass-card">
+                        <div class="playlist-header">
+                            <h3>TRIBUTE PLAYLIST</h3>
+                            <span class="playlist-sub">13 Songs • Playable Previews</span>
+                        </div>
+                        <div class="playlist-container" id="playlist-list">
+                            <!-- Populated dynamically by app.js -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Band History Timeline -->
+            <section id="history" class="content-section">
+                <div class="section-header center">
+                    <h2 class="section-title">THE STORY OF THE MONKEYS</h2>
+                    <p class="section-desc">From Sheffield garage jams to worldwide stadium domination.</p>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+
+                    <!-- Milestone 1 -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-badge pink-badge">2002</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-pink">The Birth of a Beast</h4>
+                            <h3>Sheffield Beginnings</h3>
+                            <p>Alex Turner, Jamie Cook, Matt Helders, and Andy Nicholson form the band in High Green,
+                                Sheffield. They start practicing in a garage, playing raw instrumental covers of bands
+                                like Led Zeppelin and The Vines before Turner takes up lead vocals.</p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-pink">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Alex & Jamie's Guitars</h4>
+                                    <p>Both received guitars for Christmas in 2001, triggering their songwriting sessions.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>First Live Gig</h4>
+                                    <p>Played at The Grapes pub in Sheffield on June 13, 2003, earning £27 from ticket sales.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-pink"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="timeline-item right-item scroll-reveal">
+                        <div class="timeline-badge yellow-badge">2005</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-yellow">The Myspace Revolution</h4>
+                            <h3>Beneath the Boardwalk</h3>
+                            <p>Handing out free demo CDs at gigs leads fans to upload tracks onto Myspace. The band
+                                reaches viral internet stardom organically without record label backing, launching them
+                                straight into the national spotlight.</p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-yellow">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Demo CD Distribution</h4>
+                                    <p>Burned demo CDs were handed out for free at early shows, which fans then uploaded to the internet.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>Domino Records</h4>
+                                    <p>Signed with the independent label Domino Records in June 2005 after refusing major label offers to maintain creative control.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-yellow"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-badge cyan-badge">2006</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-cyan">A Historical Debut</h4>
+                            <h3>Whatever People Say I Am...</h3>
+                            <p>Released in January 2006, their debut album becomes the fastest-selling debut in British
+                                music history. Turner's sharp, observational lyrics about Sheffield nightlife capture
+                                the youth culture of a generation.</p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-cyan">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Dancefloor #1</h4>
+                                    <p>'I Bet You Look Good on the Dancefloor' went straight to #1 on the UK Singles Chart.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>Fastest Seller</h4>
+                                    <p>Sold over 360,000 copies in its first week, becoming the fastest-selling debut album in UK history.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-cyan"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="timeline-item right-item scroll-reveal">
+                        <div class="timeline-badge green-badge">2007</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-green">The Neon Masterpiece</h4>
+                            <h3>Favourite Worst Nightmare</h3>
+                            <p>Nick O'Malley cements his role as bassist. The band releases their second album,
+                                featuring a faster, heavier, and darker sound. Recorded with a raw, energetic punch, it
+                                features tracks like <em>Brianstorm</em>, <em>Fluorescent Adolescent</em>, and
+                                <em>505</em>.
+                            </p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-green">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Nick O'Malley Joins</h4>
+                                    <p>Joined on bass as a temporary replacement for Andy Nicholson but quickly became permanent.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>Awards Sweep</h4>
+                                    <p>The album won Best British Album and Best British Group at the 2008 Brit Awards.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-green"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-badge magenta-badge">2009</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-magenta">Desert Rock Shift</h4>
+                            <h3>Humbug & Josh Homme</h3>
+                            <p>The band travels to the Mojave Desert to record with Queens of the Stone Age frontman
+                                Josh Homme. The result is <em>Humbug</em>, introducing heavy stoner-rock elements,
+                                darker arrangements, and Turner's growing lyrical maturity.</p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-magenta">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Desert Sessions</h4>
+                                    <p>Recorded in Joshua Tree, California, homing in on heavy, atmospheric stoner-rock sounds.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>Crying Lightning</h4>
+                                    <p>The lead single highlighted the band's new organ-heavy, dark, psychedelic rock sound.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-magenta"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 6 -->
+                    <div class="timeline-item right-item scroll-reveal">
+                        <div class="timeline-badge orange-badge">2013</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-orange">Global Superstardom</h4>
+                            <h3>AM & "R U Mine?"</h3>
+                            <p>Fusing hip-hop beats, heavy rock riffs, and sleek R&B backups, <em>AM</em> catapults the
+                                Arctic Monkeys into global arenas. Turner's greaser aesthetic and tracks like <em>Do I
+                                    Wanna Know?</em> and <em>R U Mine?</em> define the indie rock sound of the 2010s.
+                            </p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-orange">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>Riff Direction</h4>
+                                    <p>Originally released as a stand-alone single in 2012, its success shaped the entire AM direction.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>US Platinum</h4>
+                                    <p>The album reached Platinum in the US, cementing their global stadium headliner status.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-orange"></div>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 7 -->
+                    <div class="timeline-item left-item scroll-reveal">
+                        <div class="timeline-badge cyan-dark-badge">2018</div>
+                        <div class="timeline-card glass-card">
+                            <h4 class="card-year text-cyan-dark">Cinematic Elegance</h4>
+                            <h3>Tranquility Base & The Car</h3>
+                            <p>Pivoting away from guitar-driven rock, they release the lounge-pop piano record
+                                <em>Tranquility Base Hotel & Casino</em> followed by the orchestral, cinematic
+                                masterpiece <em>The Car</em> in 2022, proving their relentless artistic evolution.
+                            </p>
+                            
+                            <!-- Expandable Sub-nodes -->
+                            <div class="sub-nodes-container text-cyan-dark">
+                                <div class="sub-node-branch"></div>
+                                <div class="sub-card glass-card">
+                                    <h4>The Steinway Piano</h4>
+                                    <p>Turner wrote the entire Tranquility album on a Steinway Vertegrand piano in his LA home.</p>
+                                </div>
+                                <div class="sub-card glass-card">
+                                    <h4>Monastery Sessions</h4>
+                                    <p>The Car showcases a vintage, 1970s cinematic style recorded at a remote monastery in Suffolk.</p>
+                                </div>
+                            </div>
+                            <div class="card-glow-edge border-cyan-dark"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Birthday Gift & Customizable Letter Section -->
+            <section id="gift" class="content-section">
+                <div class="gift-layout">
+                    <div class="gift-left-col">
+                        <!-- Retro Polaroid Layout -->
+                        <div class="polaroid-wrapper">
+                            <div class="polaroid-frame glow-shadow-pink">
+                                <div class="polaroid-photo">
+                                    <div class="polaroid-placeholder-bg hidden">
+                                        <i data-lucide="heart" class="heart-pulse-icon"></i>
+                                    </div>
+                                    <!-- A generated birthday image or couple image, defaults to a cool neon graphic -->
+                                    <img id="polaroid-img" src="assets/polaroid.jpg" alt="Polaroid Picture">
+                                </div>
+                                <div class="polaroid-caption">
+                                    <p class="polaroid-title">Anahita & Arctic Monkeys</p>
+                                    <p class="polaroid-date">June 8, 2026</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gift-right-col">
+                        <!-- Glowing Birthday Letter Container -->
+                        <div class="letter-box glass-card">
+                            <div class="envelope-header">
+                                <div class="stamp-icon"><i data-lucide="heart" class="text-magenta"></i></div>
+                                <h3>FOR ANAHITA 🖤</h3>
+                            </div>
+
+                            <div class="letter-content-container">
+                                <!-- The editable text box -->
+                                <div id="birthday-letter" class="editable-letter-body" contenteditable="false">Hey
+                                    Babe!<br><br>Happy Birthday! You could've picked anything in the world to have for
+                                    your birthday and you picked an Arctic Monkeys tribute site! Twas certainly a
+                                    choice, but I hope you like it nonetheless. I added a confetti button because
+                                    confetti is nearly as awesome as you. Seriously happy birthday babe, also you lost
+                                    the game, love youuuuuu.<br><br>Happy Birthday!</div>
+                            </div>
+
+                            <!-- Buttons to trigger letter edit/save and confetti -->
+                            <div class="letter-actions">
+                                <button id="airhorn-btn" class="neon-btn-outline yellow-btn sm">
+                                    <i data-lucide="megaphone"></i> <span>Press Me!</span>
+                                </button>
+                                <button id="celebrate-btn" class="neon-btn pink-btn sm">
+                                    <i data-lucide="sparkles"></i> <span>Make It Rain!</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Futures Constellation Web -->
+            <section id="futures" class="content-section">
+                <div class="section-header center">
+                    <h2 class="section-title">THE INSPIRED WEB</h2>
+                    <p class="section-desc">Explore the galaxy of incredible artists inspired by the Arctic Monkeys.</p>
+                </div>
+
+                <div class="constellation-viewport glass-card">
+                    <!-- SVG lines linking nodes. Absolute positioned in the background. -->
+                    <svg class="constellation-svg" viewBox="0 0 800 500" preserveAspectRatio="none">
+                        <!-- Connecting lines from center (400, 250) to inspired nodes -->
+                        <line x1="400" y1="250" x2="180" y2="100" class="constellation-line line-pink" />
+                        <line x1="400" y1="250" x2="620" y2="100" class="constellation-line line-cyan" />
+                        <line x1="400" y1="250" x2="180" y2="400" class="constellation-line line-green" />
+                        <line x1="400" y1="250" x2="620" y2="400" class="constellation-line line-yellow" />
+                        <line x1="400" y1="250" x2="400" y2="430" class="constellation-line line-gold dashed-line" />
+                    </svg>
+
+                    <!-- Central Node: Arctic Monkeys -->
+                    <div class="constellation-node central-node" style="top: 50%; left: 50%;" title="The Nucleus">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/arctic-monkeys.png" alt="Arctic Monkeys">
+                        </div>
+                        <div class="node-label">ARCTIC MONKEYS</div>
+                    </div>
+
+                    <!-- Inspired Node 1: The 1975 -->
+                    <div class="constellation-node inspired-node node-pink" style="top: 20%; left: 22.5%;" data-artist="the-1975">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/the-1975.png" alt="The 1975">
+                        </div>
+                        <div class="node-label">THE 1975</div>
+                    </div>
+
+                    <!-- Inspired Node 2: Sam Fender -->
+                    <div class="constellation-node inspired-node node-cyan" style="top: 20%; left: 77.5%;" data-artist="sam-fender">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/sam-fender.png" alt="Sam Fender">
+                        </div>
+                        <div class="node-label">SAM FENDER</div>
+                    </div>
+
+                    <!-- Inspired Node 3: Fontaines D.C. -->
+                    <div class="constellation-node inspired-node node-green" style="top: 80%; left: 22.5%;" data-artist="fontaines-dc">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/fontaines-dc.png" alt="Fontaines D.C.">
+                        </div>
+                        <div class="node-label">FONTAINES D.C.</div>
+                    </div>
+
+                    <!-- Inspired Node 4: Catfish and the Bottlemen -->
+                    <div class="constellation-node inspired-node node-yellow" style="top: 80%; left: 77.5%;" data-artist="catfish">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/catfish.png" alt="Catfish & The Bottlemen">
+                        </div>
+                        <div class="node-label">CATFISH & THE BOTTLEMEN</div>
+                    </div>
+
+                    <!-- Easter Egg Node: Tyler, The Creator -->
+                    <div class="constellation-node inspired-node node-gold animate-pulse-gold" style="top: 86%; left: 50%;" data-artist="tyler">
+                        <div class="node-glow-circle">
+                            <img class="node-avatar" src="assets/images/tyler.png" alt="Tyler, The Creator">
+                        </div>
+                        <div class="node-label"><i data-lucide="crown" class="gold-crown-icon"></i> TYLER, THE CREATOR</div>
+                    </div>
+                </div>
+
+                <!-- Info Drawer (Slides up when a node is clicked) -->
+                <div id="node-info-drawer" class="info-drawer glass-card hidden">
+                    <button id="close-drawer-btn" class="close-drawer"><i data-lucide="x"></i></button>
+                    <div class="drawer-layout">
+                        <img id="drawer-art" src="" alt="Album Art" class="drawer-album-art">
+                        <div class="drawer-details">
+                            <span id="drawer-artist-tag" class="small-tag text-pink">INSPIRED ARTIST</span>
+                            <h3 id="drawer-artist-name">The 1975</h3>
+                            <p id="drawer-bio">
+                                Heavily inspired by Alex Turner's verbose, conversational lyricism and syncopated rhythmic hooks.
+                            </p>
+                            <div class="drawer-play-container">
+                                <button id="drawer-play-btn" class="neon-btn pink-btn sm">
+                                    <i data-lucide="play"></i> <span>LISTEN PREVIEW</span>
+                                </button>
+                                <span id="drawer-track-title" class="drawer-track-info">Chocolate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Audio Element (hidden) -->
+        <audio id="audio-player" preload="auto"></audio>
+
+        <!-- Tyler Takeover Full-Screen Overlay -->
+        <div id="tyler-takeover-overlay" class="kanye-overlay hidden">
+            <div class="kanye-glitch-bg"></div>
+            <div class="kanye-content-box glass-card border-gold">
+                <div class="gold-crown-header">
+                    <i data-lucide="crown" class="kanye-big-crown"></i>
+                </div>
+                <h1 class="kanye-title">TYLER OVERRIDE</h1>
+                <p class="kanye-subtitle">SYSTEM NOTIFICATION: ARTIST RANKING UPDATE</p>
+                
+                <div class="kanye-quote-box">
+                    <p>
+                        "Hey Baaaabbeee, so Tyler wasn't influenced by Arctic Monkeys but he's still awesome and I felt like this website needed a <strong>liiitttlee</strong> bit of soul in it. Love you nonetheless, enjoy the rest of the website once you click that button that says agree."
+                    </p>
+                </div>
+                
+                <div class="kanye-visuals">
+                    <div class="gold-vinyl rotate-on-play playing">
+                        <div class="vinyl-center"></div>
+                    </div>
+                </div>
+                
+                <button id="dismiss-tyler-btn" class="neon-btn gold-btn">
+                    <span>I AGREE, RESTORE SITE</span>
+                    <i data-lucide="check"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>

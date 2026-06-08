@@ -1,0 +1,4 @@
+.DS_Store
+*.log
+sub_nodes_extracted.txt
+revert_diff.txt
