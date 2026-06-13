@@ -149,6 +149,7 @@ body {
     margin-bottom: 1rem;
     background: linear-gradient(135deg, #fff 40%, rgba(255, 255, 255, 0.6));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -689,6 +690,7 @@ body {
 
 .neon-slider {
     -webkit-appearance: none;
+    appearance: none;
     width: 100%;
     height: 5px;
     background: #27272a;
@@ -1534,7 +1536,70 @@ body {
     position: relative;
     width: 100%;
     height: 520px;
-    background: radial-gradient(circle at center, #18181b 0%, #0d0d0f 100%);
+    /* Starry galaxy: deep space black with layered star clusters */
+    background-color: #02020a;
+    background-image:
+        /* Nebula core glow */
+        radial-gradient(ellipse 55% 35% at 50% 50%, rgba(80, 20, 120, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 20% at 50% 50%, rgba(30, 10, 80, 0.22) 0%, transparent 60%),
+        /* Large bright stars */
+        radial-gradient(circle 1.5px at 12% 8%, #fff 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 87% 14%, #fff 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 44% 91%, #ffffffcc 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 66% 5%, #fff 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 33% 72%, #fff 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 78% 82%, #ffffffcc 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 5%  55%, #fff 0%, transparent 100%),
+        radial-gradient(circle 1.5px at 95% 48%, #ffffffcc 0%, transparent 100%),
+        /* Medium stars */
+        radial-gradient(circle 1px at 19% 23%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 53% 17%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 72% 31%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 38% 44%, #ffffffbb 0%, transparent 100%),
+        radial-gradient(circle 1px at 81% 58%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 25% 63%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 60% 77%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 14% 85%, #ffffffbb 0%, transparent 100%),
+        radial-gradient(circle 1px at 91% 22%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 47% 38%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 30% 12%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 70% 68%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 55% 52%, #ffffffbb 0%, transparent 100%),
+        radial-gradient(circle 1px at 8%  35%, #ffffffaa 0%, transparent 100%),
+        radial-gradient(circle 1px at 93% 78%, #ffffffaa 0%, transparent 100%),
+        /* Small dim stars */
+        radial-gradient(circle 0.75px at 22% 41%, #ffffff77 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 41% 6%,  #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 62% 19%, #ffffff77 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 17% 56%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 83% 41%, #ffffff77 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 48% 65%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 76% 88%, #ffffff77 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 35% 30%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 57% 96%, #ffffff55 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 3%  18%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 90% 63%, #ffffff55 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 28% 79%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 65% 43%, #ffffff55 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 11% 94%, #ffffff66 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 79% 7%,  #ffffff55 0%, transparent 100%),
+        radial-gradient(circle 0.75px at 43% 84%, #ffffff66 0%, transparent 100%),
+        /* Tiny speck stars for density */
+        radial-gradient(circle 0.5px at 7%  73%, #ffffff44 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 50% 28%, #ffffff44 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 85% 12%, #ffffff33 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 16% 48%, #ffffff44 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 68% 55%, #ffffff33 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 37% 89%, #ffffff44 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 92% 35%, #ffffff33 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 24% 3%,  #ffffff44 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 58% 74%, #ffffff33 0%, transparent 100%),
+        radial-gradient(circle 0.5px at 73% 21%, #ffffff44 0%, transparent 100%),
+        /* Subtle cool-tinted stars (blue-ish for realism) */
+        radial-gradient(circle 1px at 31% 57%, rgba(180,210,255,0.6) 0%, transparent 100%),
+        radial-gradient(circle 1px at 64% 36%, rgba(180,210,255,0.5) 0%, transparent 100%),
+        radial-gradient(circle 1px at 86% 75%, rgba(180,210,255,0.55) 0%, transparent 100%),
+        radial-gradient(circle 1px at 9%  11%, rgba(180,210,255,0.5) 0%, transparent 100%);
     border-color: rgba(255, 255, 255, 0.05);
     padding: 0;
     overflow: hidden;
